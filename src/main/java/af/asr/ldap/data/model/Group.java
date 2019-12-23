@@ -35,4 +35,9 @@ public final class Group {
     public void addMember(Name newMember) {
         members.add(newMember);
     }
+
+
+    public void removeMember(Name member) {
+        members.remove(member);
+    }
 }
