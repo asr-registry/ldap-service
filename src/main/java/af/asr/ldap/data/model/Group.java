@@ -32,4 +32,7 @@ public final class Group {
     private Set<Name> members = new HashSet<Name>();
 
 
+    public void addMember(Name newMember) {
+        members.add(newMember);
+    }
 }
