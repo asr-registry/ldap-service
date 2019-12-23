@@ -11,7 +11,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
@@ -31,6 +32,16 @@ public final class Group {
     @Attribute(name = "member")
     private Set<Name> members = new HashSet<Name>();
 
+
+    public Set<Name> getMembers()
+    {
+        return this.members;
+    }
+
+    public void setMembers(Set<Name> members)
+    {
+        this.setMembers(members);
+    }
 
     public void addMember(Name newMember) {
         members.add(newMember);
