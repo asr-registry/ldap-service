@@ -1,5 +1,6 @@
 package af.asr.ldap;
 
+import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ public class LdapApplication {
 //		LOG.info("Jackson2ObjectMapperBuilder bean used!");
 
 		Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
-//		builder.serializers(new NameSerializer());
+		builder.serializers(new StringSerializer());
 		builder.indentOutput(true);
 		return builder;
 	}
