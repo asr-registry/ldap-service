@@ -52,8 +52,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .groupSearchBase("ou=groups")
                 .groupSearchFilter("member={0}")
                 .contextSource()
-                .root("dc=example,dc=com")
-                .ldif("classpath:/setup_data.ldif");
+                .root("dc=asr,dc=af")
+                .ldif("classpath:/data/users.ldif");
     }
 
     @Override
