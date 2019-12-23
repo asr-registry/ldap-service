@@ -33,16 +33,6 @@ public final class Group {
     private Set<Name> members = new HashSet<Name>();
 
 
-    public Set<Name> getMembers()
-    {
-        return this.members;
-    }
-
-    public void setMembers(Set<Name> members)
-    {
-        this.setMembers(members);
-    }
-
     public void addMember(Name newMember) {
         members.add(newMember);
     }
