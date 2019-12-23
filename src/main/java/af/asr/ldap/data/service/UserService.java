@@ -144,7 +144,7 @@ public class UserService implements BaseLdapNameAware {
             LdapName oldMemberDn = toAbsoluteDn(originalId);
             LdapName newMemberDn = toAbsoluteDn(savedUser.getId());
 
-            Collection<Group> groups = groupRepo.findByMember(oldMemberDn);
+            Collection<Group> groups = groupRepo.findByMembers(oldMemberDn);
             updateGroupReferences(groups, oldMemberDn, newMemberDn);
         }
         return savedUser;
@@ -167,7 +167,7 @@ public class UserService implements BaseLdapNameAware {
      */
     private User updateUserAd(LdapName originalId, User existingUser) {
         LdapName oldMemberDn = toAbsoluteDn(originalId);
-        Collection<Group> groups = groupRepo.findByMember(oldMemberDn);
+        Collection<Group> groups = groupRepo.findByMembers(oldMemberDn);
 
         User savedUser = userRepo.save(existingUser);
         LdapName newMemberDn = toAbsoluteDn(savedUser.getId());

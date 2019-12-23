@@ -20,15 +20,13 @@ import java.util.Collection;
  * naming convention; the 'ByName' constraint will be fulfilled using a filter based on the attribute mapping of
  * the name attribute in the target entity class.
  * <p/>
- * The {@link #findByMember(javax.naming.Name)} acts on the Query annotation, building an
+ * The {@link #findByMembers(javax.naming.Name)} acts on the Query annotation, building an
  * {@link org.springframework.ldap.query.LdapQuery} from the annotation attributes.
 
  */
 public interface GroupRepository extends LdapRepository<Group>, GroupRepositoryExtension {
     public final static String USER_GROUP = "ROLE_USER";
-
     Group findByName(String groupName);
-
     @Query("(member={0})")
-    Collection<Group> findByMember(Name member);
+    Collection<Group> findByMembers(Name member);
 }
